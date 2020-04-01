@@ -1,4 +1,4 @@
-var tableData = data;
+var ufoData = data;
 
 const tbody = d3.select("tbody");
 
@@ -9,7 +9,7 @@ function buildTable(ufos) {
     tbody.html("");
 
     //build rows
-    ufos.forEach(dataRow => {
+    ufoData.forEach(dataRow => {
         const row = tbody.append("tr");
         //for each row made...
         Object.values(dataRow).forEach((val) => {
@@ -21,8 +21,9 @@ function buildTable(ufos) {
     });
 };
 
+
 function handleClick(){
-    var enterdDate = d3.select("form-control").value();
+    var enterdDate = d3.select("#form-control").value();
     var filteredData = tableData.filter( data => data.year = enteredDate);
     buildTable(filteredData);
 };
