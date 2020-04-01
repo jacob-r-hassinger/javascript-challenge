@@ -23,7 +23,7 @@ function buildTable(ufos) {
 
 
 function handleClick(){
-    var enterdDate = d3.select("#form-control").value();
+    var enterdDate = d3.select("#form-control").text("value");
     var filteredData = ufoData.filter( data => data.year = enteredDate);
     buildTable(filteredData);
 };
