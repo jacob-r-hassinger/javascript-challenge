@@ -7,7 +7,7 @@ function buildTable(ufos) {
     //first time you come to the page
     //the function needs to clear the table to reload new data
     tbody.html("");
-
+    console.log("Something changed")
     //build rows
     ufos.forEach(dataRow => {
         const row = tbody.append("tr");
@@ -23,12 +23,12 @@ function buildTable(ufos) {
 
 
 function handleClick(){
-    var enterdDate = d3.select("#form-control").text("value");
-    var filteredData = ufoData.filter( data => data.year = enteredDate);
+    var enteredDate = document.getElementById("datetime").value;
+    var filteredData = ufoData.filter( data => data.year === enteredDate);
     buildTable(filteredData);
 };
 
-d3.selectAll("filter-btn").on("click", handleClick);
+d3.selectAll("button").on("click", handleClick);
 
 buildTable(ufoData);
 
