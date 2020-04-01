@@ -9,7 +9,7 @@ function buildTable(ufos) {
     tbody.html("");
 
     //build rows
-    ufoData.forEach(dataRow => {
+    ufos.forEach(dataRow => {
         const row = tbody.append("tr");
         //for each row made...
         Object.values(dataRow).forEach((val) => {
@@ -24,12 +24,12 @@ function buildTable(ufos) {
 
 function handleClick(){
     var enterdDate = d3.select("#form-control").value();
-    var filteredData = tableData.filter( data => data.year = enteredDate);
+    var filteredData = ufoData.filter( data => data.year = enteredDate);
     buildTable(filteredData);
 };
 
 d3.selectAll("filter-btn").on("click", handleClick);
 
-buildTable(tableData);
+buildTable(ufoData);
 
 //next a function that listens for a click on the button
