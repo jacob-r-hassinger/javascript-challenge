@@ -28,10 +28,10 @@ function handleClick(){
     var enteredState = document.getElementById("state").value;
     var enteredCountry = document.getElementById("country").value;
     var enteredShape = document.getElementById("shape").value;
-    var filteredData = ufoData
+    var filteredData = ufoData;
     
     if (enteredDate != "") {
-        filteredData = filteredData.filter( data => data.date === enteredDate)
+        filteredData = filteredData.filter( data => data.datetime === enteredDate)
     };
     if (enteredCity != "") {
         filteredData = filteredData.filter( data => data.city === enteredCity)
