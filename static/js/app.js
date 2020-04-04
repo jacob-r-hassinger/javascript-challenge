@@ -24,6 +24,10 @@ function buildTable(ufos) {
 
 function handleClick(){
     var enteredDate = document.getElementById("datetime").value;
+    var enteredCity = document.getElementById("city").value;
+    var enteredState = document.getElementById("state").value;
+    var enteredCountry = document.getElementById("country").value;
+    var enteredShape = document.getElementById("shape").value;
     var filteredData = ufoData.filter( data => data.year === enteredDate);
     buildTable(filteredData);
 };
