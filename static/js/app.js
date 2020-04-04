@@ -28,13 +28,24 @@ function handleClick(){
     var enteredState = document.getElementById("state").value;
     var enteredCountry = document.getElementById("country").value;
     var enteredShape = document.getElementById("shape").value;
-    var filteredData = ufoData.filter( data => 
-        data.year === enteredDate && 
-        data.city === enteredCity &&
-        data.state === enteredState &&
-        data.country === enteredCountry &&
-        data.shape === enteredShape
-    );
+    var filteredData = ufoData
+    
+    if (enteredDate != "") {
+        filteredData = filteredData.filter( data => data.date === enteredDate)
+    };
+    if (enteredCity != "") {
+        filteredData = filteredData.filter( data => data.city === enteredCity)
+    };
+    if (enteredState != "") {
+        filteredData = filteredData.filter( data => data.state === enteredState)
+    };
+    if (enteredCountry != "") {
+        filteredData = filteredData.filter( data => data.country === enteredCountry)
+    };
+    if (enteredShape != "") {
+        filteredData = filteredData.filter( data => data.shape === enteredShape)
+    };
+
     buildTable(filteredData);
 };
 
